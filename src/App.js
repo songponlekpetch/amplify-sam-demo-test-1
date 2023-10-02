@@ -8,7 +8,6 @@ function App() {
   const getApiMessage = async () => {
 
     console.log(process.env.REACT_APP_ENDPOINT);
-    console.log(process.env.REACT_APP_MESSAGE);
     const response = await fetch(`${process.env.REACT_APP_ENDPOINT}`, {
       mode: 'cors'
     });
@@ -24,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>CALL AN API</h1>
+        <h1>{process.env.REACT_APP_MESSAGE}</h1>
         <button onClick={getApiMessage}>Call Lambda</button>
         <div>
           {showResult && <code>{JSON.stringify(apiMessage, null, 2)}</code>}
