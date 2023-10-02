@@ -8,6 +8,7 @@ function App() {
   const getApiMessage = async () => {
 
     console.log(process.env.REACT_APP_ENDPOINT);
+    console.log(process.env.REACT_APP_MESSAGE);
     const response = await fetch(`${process.env.REACT_APP_ENDPOINT}`, {
       mode: 'cors'
     });
